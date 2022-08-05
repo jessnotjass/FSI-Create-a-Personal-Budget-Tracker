@@ -1,27 +1,41 @@
-let weeklyExpenses = 0
-let monthlyExpenses = 0
-let annualExpenses = 0
+let [
+        weeklyExpenses,
+        monthlyExpenses,
+        annualExpenses
+    ] = Array(3).fill(0)
 
-// Your Code Here
-for (let i = weeklyExpenseQuestions.length - 1; i >= 0; i--) {
+let i = weeklyExpenseQuestions.length - 1
+while (i >= 0) {
     let answer = parseFloat(window.prompt(weeklyExpenseQuestions[i]))
     console.log(`${weeklyExpenseQuestions[i]}: ${answer}`)
     weeklyExpenses = weeklyExpenses + answer
+    i--
 }
+// for (let i = weeklyExpenseQuestions.length - 1; i >= 0; i--) {
+//     let answer = parseFloat(window.prompt(weeklyExpenseQuestions[i]))
+//     console.log(`${weeklyExpenseQuestions[i]}: ${answer}`)
+//     weeklyExpenses = weeklyExpenses + answer
+// }
 
-for (let i = weeklyExpenseQuestions.length; i >= 0; i--) {
-    let answer = parseFloat(window.prompt(monthlyExpenseQuestions[i - 1]))
-    console.log(`${monthlyExpenseQuestions[i]}: ${answer}`)
+let j = monthlyExpenseQuestions.length
+while (j > 0) {
+    let answer = parseFloat(window.prompt(monthlyExpenseQuestions[j]))
+    console.log(`${monthlyExpenseQuestions[j]}: ${answer}`)
     monthlyExpenses = monthlyExpenses + answer
+    j--
 }
+// for (let i = monthlyExpenseQuestions.length; i > 0; i--) {
+//     let answer = parseFloat(window.prompt(monthlyExpenseQuestions[i]))
+//     console.log(`${monthlyExpenseQuestions[i]}: ${answer}`)
+//     monthlyExpenses = monthlyExpenses + answer
+// }
 
-let i = 0
-while (i < annualExpenseQuestions.length) {
-    let answer = parseFloat(window.prompt(annualExpenseQuestions[i]))
-    console.log(`${annualExpenseQuestions[i]}: ${answer}`)
+let k = 0
+while (k < annualExpenseQuestions.length) {
+    let answer = parseFloat(window.prompt(annualExpenseQuestions[k]))
+    console.log(`${annualExpenseQuestions[k]}: ${answer}`)
     annualExpenses = annualExpenses + answer
-    i++
-    console.log(i)
+    k++
 }
 
 // for (let i = 0; i < annualExpenseQuestions.length; i++) {
